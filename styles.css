@@ -296,9 +296,7 @@ h1 {
 }
 
 .hero-platform-banner::before,
-.hero-platform-banner::after,
-.mobile-platform-banner::before,
-.mobile-platform-banner::after {
+.mobile-platform-banner::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -316,17 +314,6 @@ h1 {
     inset 0 0 24px rgba(216, 168, 63, 0.16),
     0 0 24px rgba(216, 168, 63, 0.2);
   clip-path: polygon(4% 0, 96% 0, 100% 50%, 96% 100%, 4% 100%, 0 50%);
-}
-
-.hero-platform-banner::after,
-.mobile-platform-banner::after {
-  inset: auto -9% 0;
-  height: 2px;
-  background:
-    radial-gradient(circle at 1% 50%, rgba(255, 235, 175, 0.98) 0 3px, transparent 4px),
-    radial-gradient(circle at 99% 50%, rgba(255, 235, 175, 0.98) 0 3px, transparent 4px),
-    linear-gradient(90deg, transparent 0%, rgba(255, 225, 154, 0.76) 8%, rgba(216, 168, 63, 0.22) 18%, transparent 30% 70%, rgba(216, 168, 63, 0.22) 82%, rgba(255, 225, 154, 0.76) 92%, transparent 100%);
-  filter: drop-shadow(0 0 8px rgba(216, 168, 63, 0.52));
 }
 
 .hero-platform-banner {
@@ -359,7 +346,7 @@ h1 {
 .mobile-platform-banner__badge {
   position: absolute;
   left: 50%;
-  bottom: -18px;
+  bottom: -28px;
   transform: translateX(-50%);
   min-width: 210px;
   border: 1px solid rgba(255, 236, 179, 0.7);
@@ -1084,20 +1071,15 @@ h1 {
   }
 
   .mobile-platform-banner__badge {
-    bottom: -14px;
+    bottom: -24px;
     min-width: 138px;
     border-radius: 0 0 12px 12px;
     padding: 4px 18px 5px;
     font-size: clamp(0.82rem, 3.6vw, 1rem);
   }
 
-  .mobile-platform-banner::after {
-    right: -7%;
-    left: -7%;
-  }
-
   .mobile-subheadline {
-    margin: 24px 0 28px;
+    margin: 34px 0 28px;
     color: #f8f3e9;
     font-size: clamp(1.1rem, 4.7vw, 1.55rem);
     font-weight: 800;
