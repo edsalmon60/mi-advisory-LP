@@ -322,14 +322,12 @@ h1 {
 
 .hero-platform-banner::after,
 .mobile-platform-banner::after {
-  inset: 45% -36px auto;
-  height: 8px;
+  inset: 45% 0 auto;
+  height: 10px;
   background:
-    radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 3px, rgba(216, 168, 63, 0.34) 4px, transparent 10px) left center / 22px 8px no-repeat,
-    radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 3px, rgba(216, 168, 63, 0.34) 4px, transparent 10px) right center / 22px 8px no-repeat,
-    linear-gradient(90deg, transparent, rgba(255, 225, 154, 0.5), rgba(216, 168, 63, 0.12), transparent) left center / 150px 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(216, 168, 63, 0.12), rgba(255, 225, 154, 0.5), transparent) right center / 150px 2px no-repeat;
-  filter: blur(0.2px) drop-shadow(0 0 10px rgba(216, 168, 63, 0.46));
+    radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.44) 3px, transparent 9px) left center / 18px 10px no-repeat,
+    radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.44) 3px, transparent 9px) right center / 18px 10px no-repeat;
+  filter: blur(0.15px) drop-shadow(0 0 8px rgba(216, 168, 63, 0.42));
 }
 
 .hero-platform-banner {
@@ -990,7 +988,7 @@ h1 {
   .mobile-brand {
     display: block;
     width: min(165px, 42vw);
-    margin: 0 auto 8px;
+    margin: 0 auto -8px;
     filter: drop-shadow(0 0 24px rgba(216, 168, 63, 0.36));
   }
 
@@ -1095,13 +1093,9 @@ h1 {
   }
 
   .mobile-platform-banner::after {
-    right: -24px;
-    left: -24px;
     background:
-      radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.32) 3px, transparent 8px) left center / 18px 8px no-repeat,
-      radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.32) 3px, transparent 8px) right center / 18px 8px no-repeat,
-      linear-gradient(90deg, transparent, rgba(255, 225, 154, 0.46), rgba(216, 168, 63, 0.1), transparent) left center / 62px 2px no-repeat,
-      linear-gradient(90deg, transparent, rgba(216, 168, 63, 0.1), rgba(255, 225, 154, 0.46), transparent) right center / 62px 2px no-repeat;
+      radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.36) 3px, transparent 8px) left center / 16px 9px no-repeat,
+      radial-gradient(circle, rgba(255, 236, 180, 0.95) 0 2px, rgba(216, 168, 63, 0.36) 3px, transparent 8px) right center / 16px 9px no-repeat;
   }
 
   .mobile-subheadline {
