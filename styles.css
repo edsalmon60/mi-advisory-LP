@@ -284,6 +284,96 @@ h1 {
   transform: rotate(45deg);
 }
 
+.hero-platform-banner,
+.mobile-platform-banner {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  color: var(--gold-bright);
+}
+
+.hero-platform-banner::before,
+.hero-platform-banner::after,
+.mobile-platform-banner::before,
+.mobile-platform-banner::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-platform-banner::before,
+.mobile-platform-banner::before {
+  inset: 0;
+  border: 1px solid rgba(255, 214, 125, 0.72);
+  background:
+    linear-gradient(90deg, transparent 0 5%, rgba(255, 225, 154, 0.22) 18%, transparent 34% 66%, rgba(255, 225, 154, 0.22) 82%, transparent 95%),
+    linear-gradient(180deg, rgba(255, 225, 154, 0.1), rgba(0, 0, 0, 0.1));
+  box-shadow:
+    inset 0 0 24px rgba(216, 168, 63, 0.16),
+    0 0 24px rgba(216, 168, 63, 0.2);
+  clip-path: polygon(4% 0, 96% 0, 100% 50%, 96% 100%, 4% 100%, 0 50%);
+}
+
+.hero-platform-banner::after,
+.mobile-platform-banner::after {
+  inset: 48% -9% auto;
+  height: 2px;
+  background:
+    radial-gradient(circle at 2% 50%, rgba(255, 235, 175, 0.98) 0 3px, transparent 4px),
+    radial-gradient(circle at 98% 50%, rgba(255, 235, 175, 0.98) 0 3px, transparent 4px),
+    linear-gradient(90deg, transparent, rgba(255, 225, 154, 0.76) 12%, rgba(216, 168, 63, 0.25) 50%, rgba(255, 225, 154, 0.76) 88%, transparent);
+  filter: drop-shadow(0 0 8px rgba(216, 168, 63, 0.52));
+}
+
+.hero-platform-banner {
+  width: min(860px, 92vw);
+  min-height: 92px;
+  margin: 14px auto 8px;
+  padding: 14px 54px 20px;
+}
+
+.hero-platform-banner__text,
+.mobile-platform-banner__text {
+  position: relative;
+  display: block;
+  color: transparent;
+  background: linear-gradient(180deg, #fff3bf 0%, #d8a83f 46%, #875b16 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-shadow: 0 0 28px rgba(216, 168, 63, 0.28);
+  white-space: nowrap;
+}
+
+.hero-platform-banner__text {
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.hero-platform-banner__badge,
+.mobile-platform-banner__badge {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  min-width: 210px;
+  border: 1px solid rgba(255, 236, 179, 0.7);
+  border-radius: 0 0 16px 16px;
+  padding: 5px 28px 7px;
+  color: #100b02;
+  background: linear-gradient(180deg, #fff0bd 0%, #d8a83f 52%, #8a5a15 100%);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.05;
+  box-shadow: 0 9px 24px rgba(216, 168, 63, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.48);
+  white-space: nowrap;
+}
+
 .hero__kicker {
   margin: 0 0 18px;
   color: var(--gold-bright);
@@ -293,7 +383,7 @@ h1 {
 
 .hero__subheadline {
   max-width: 840px;
-  margin: 20px auto 20px;
+  margin: 28px auto 20px;
   color: #f5efe2;
   font-size: clamp(1.15rem, 3.2vw, 1.75rem);
   font-weight: 800;
@@ -652,12 +742,24 @@ h1 {
   color: var(--gold-bright);
   font-size: 1.16rem;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 .service-card p {
   margin: 0;
   color: var(--muted);
   font-size: 1rem;
+}
+
+.service-card .service-description-en {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+.service-card--registration h3 {
+  line-height: 1.18;
+  text-wrap: balance;
 }
 
 .section--why {
@@ -975,8 +1077,33 @@ h1 {
     text-shadow: 0 0 30px rgba(216, 168, 63, 0.2);
   }
 
+  .mobile-platform-banner {
+    width: min(560px, 96%);
+    min-height: 54px;
+    margin: 14px auto 6px;
+    padding: 8px 24px 13px;
+  }
+
+  .mobile-platform-banner__text {
+    font-size: clamp(1.52rem, 7.2vw, 2.55rem);
+    line-height: 0.98;
+  }
+
+  .mobile-platform-banner__badge {
+    bottom: -14px;
+    min-width: 138px;
+    border-radius: 0 0 12px 12px;
+    padding: 4px 18px 5px;
+    font-size: clamp(0.82rem, 3.6vw, 1rem);
+  }
+
+  .mobile-platform-banner::after {
+    right: -7%;
+    left: -7%;
+  }
+
   .mobile-subheadline {
-    margin: 18px 0 28px;
+    margin: 24px 0 28px;
     color: #f8f3e9;
     font-size: clamp(1.1rem, 4.7vw, 1.55rem);
     font-weight: 800;
@@ -1304,6 +1431,28 @@ h1 {
     font-size: clamp(0.88rem, 3.3vw, 1rem);
     font-weight: 500;
     line-height: 1.55;
+  }
+
+  .mobile-service-card__description--en {
+    margin-top: 5px;
+    font-size: clamp(0.78rem, 3vw, 0.92rem);
+    line-height: 1.42;
+  }
+
+  .mobile-service-card--registration {
+    align-items: center;
+    min-height: 190px;
+  }
+
+  .mobile-service-card--registration h3 {
+    font-size: clamp(1.2rem, 4.7vw, 1.58rem);
+    line-height: 1.16;
+  }
+
+  .mobile-service-card--registration .mobile-service-card__subtitle {
+    margin-top: 1px;
+    font-size: clamp(0.86rem, 3.28vw, 1.06rem);
+    line-height: 1.28;
   }
 
   .mobile-card-arrow {
